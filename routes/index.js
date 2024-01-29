@@ -5,7 +5,7 @@ var logincontroller = require('../controller/logincontroller');
 var auth = require('../middleware/auth');
 
 
-router.get('/',user.index);
+router.get('/',auth.check_token,user.index);
 
 router.post('/login',logincontroller.login);
 router.get('/logout',logincontroller.logout);
